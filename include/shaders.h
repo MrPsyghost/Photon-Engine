@@ -1,0 +1,23 @@
+#ifndef SHADERS_H
+#define SHADERS_H
+
+#define SHADERS_LIMIT 10000
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "glad/glad.h"
+#include "GLFW/glfw3.h"
+#include <stdbool.h>
+
+char* getFileContents(const char* fileName);
+
+typedef struct {
+    GLuint ID;
+} Shaders;
+
+Shaders* createShaders(const char* vertexFile, const char* fragmentFile);
+
+void ActivateShaders(Shaders* shader);
+void DeleteShaders(Shaders* shader);
+
+#endif
