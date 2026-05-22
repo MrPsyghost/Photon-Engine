@@ -123,7 +123,7 @@ int main() {
     UnbindVBO();
     UnbindEBO();
 
-    vec4 lightColor = {1.0f, 1.0f, 1.0f, 0.4f};
+    vec4 lightColor = {1.0f, 1.0f, 1.0f, 1.0f};
     
     vec3 lightPos = {0.5f, 0.5f, 0.5f};
     mat4 lightModel;
@@ -145,10 +145,11 @@ int main() {
     while (!glfwWindowShouldClose(window)) {
         glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        
+
         Inputs(cam, window);
         updateMatrix(cam, 45.0f, 0.1f, 100.0f);
         ActivateShaders(shaderProgram);
+        glUniform3f(glGetUniformLocation(shaderProgram->ID, "camPos"), cam->Position[0], cam->Position[1], cam->Position[2]);
         Matrix(cam, shaderProgram, "camMatrix");
 
         ActivateShaders(lightShaders);
