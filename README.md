@@ -6,15 +6,17 @@ Photon Engine is built using C with GLFW, OpenGL and STB libraries. This engine 
 
 ## Build your Game
 
->Use ```docker run -it -v ${PWD}:/root/env psyghost-engine-env``` to run the docker container for making the development easier (for Windows users only).
+>Use ```docker run -it -v ${PWD}:/root/env <container-name>``` to run the docker container for making the development easier (for Windows users only).
 >>If you haven't built the container yet, use ```docker build -f buildenv``` to build the docker container and then use the above command.
 >Use ```make``` or ```make build-exe``` inside the container to build the game.
 >Use ```exit``` to leave the container.
-
-You have successfully built your game.
 
 ## Run/Test the Game
 
 >Use ```.\build\game.exe``` or double click on ```game.exe``` to run the game.
 
-Congratulations, your game is running.
+## Engine Images
+
+!["Point Light Example"](engine.Images/pointLight.png "Point Light Example")
+!["Direction Light Example"](engine.Images/direcLight.png "Direction Light Example")
+!["Spot Light Example"](engine.Images/spotLight.png "Spot Light Example")

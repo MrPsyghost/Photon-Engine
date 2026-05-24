@@ -10,9 +10,10 @@
 typedef struct {
     GLuint ID;
     GLenum Type;
+    GLuint unit;
 } Texture;
 
-Texture* createTexture(const char* image, GLenum texType, GLenum slot, GLenum format, GLenum pixelType);
+Texture* createTexture(const char* image, GLenum texType, GLuint slot, GLenum format, GLenum pixelType);
 
 void texUnit(Shaders* shaderPrgm, const char* uniform, GLuint unit);
 void BindTexture(Texture* tex);
