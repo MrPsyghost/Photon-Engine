@@ -18,5 +18,7 @@ Photon Engine is built using C with GLFW, OpenGL and STB libraries. This engine 
 ## Engine Images
 
 !["Point Light Example"](engine.Images/pointLight.png "Point Light Example")
+
 !["Direction Light Example"](engine.Images/direcLight.png "Direction Light Example")
+
 !["Spot Light Example"](engine.Images/spotLight.png "Spot Light Example")
