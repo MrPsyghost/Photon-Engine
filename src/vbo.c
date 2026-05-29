@@ -1,21 +1,21 @@
 #include "vbo.h"
 
-VBO* createVBO(GLfloat* vertices, GLsizeiptr size) {
-    VBO* vbo_ = malloc(sizeof(VBO));
-    glGenBuffers(1, &vbo_->ID);
-    glBindBuffer(GL_ARRAY_BUFFER, vbo_->ID);
+VBO* createVBO(Vertex* vertices, size_t size) {
+    VBO* vbo = malloc(sizeof(VBO));
+    glGenBuffers(1, &vbo->ID);
+    glBindBuffer(GL_ARRAY_BUFFER, vbo->ID);
     glBufferData(GL_ARRAY_BUFFER, size, vertices, GL_STATIC_DRAW);
-    return vbo_;
+    return vbo;
 }
 
-void BindVBO(VBO* vbo_) {
-    glBindBuffer(GL_ARRAY_BUFFER, vbo_->ID);
+void BindVBO(VBO* vbo) {
+    glBindBuffer(GL_ARRAY_BUFFER, vbo->ID);
 }
 
 void UnbindVBO() {
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
 
-void DeleteVBO(VBO* vbo_) {
-    glDeleteBuffers(1, &vbo_->ID);
+void DeleteVBO(VBO* vbo) {
+    glDeleteBuffers(1, &vbo->ID);
 }

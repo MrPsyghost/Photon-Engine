@@ -3,15 +3,23 @@
 
 #include <stdlib.h>
 #include "glad/glad.h"
+#include "cglm/cglm.h"
+
+typedef struct {
+    vec3 position;
+    vec3 normal;
+    vec3 color;
+    vec2 texUV;
+} Vertex;
 
 typedef struct {
     GLuint ID;
 } VBO;
 
-VBO* createVBO(GLfloat* vertices, GLsizeiptr size);
+VBO* createVBO(Vertex* vertices, size_t size);
 
-void BindVBO(VBO* vbo_);
+void BindVBO(VBO* vbo);
 void UnbindVBO();
-void DeleteVBO(VBO* vbo_);
+void DeleteVBO(VBO* vbo);
 
 #endif

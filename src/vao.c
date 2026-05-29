@@ -1,13 +1,13 @@
 #include "vao.h"
 
 VAO* createVAO() {
-    VAO* vao_ = malloc(sizeof(VAO));
-    glGenVertexArrays(1, &vao_->ID);
-    return vao_;
+    VAO* vao = malloc(sizeof(VAO));
+    glGenVertexArrays(1, &vao->ID);
+    return vao;
 }
 
-void LinkAttrib(VBO* vbo_, GLuint layout, GLuint numComponents, GLenum type, GLsizeiptr stride, void* offset) {
-    BindVBO(vbo_);
+void LinkAttrib(VBO* vbo, GLuint layout, GLuint numComponents, GLenum type, GLsizeiptr stride, void* offset) {
+    BindVBO(vbo);
 
     glVertexAttribPointer(layout, numComponents, type, GL_FALSE, stride, offset);
     glEnableVertexAttribArray(layout);
@@ -15,14 +15,14 @@ void LinkAttrib(VBO* vbo_, GLuint layout, GLuint numComponents, GLenum type, GLs
     UnbindVBO();
 }
 
-void BindVAO(VAO* vao_) {
-    glBindVertexArray(vao_->ID);
+void BindVAO(VAO* vao) {
+    glBindVertexArray(vao->ID);
 }
 
 void UnbindVAO() {
     glBindVertexArray(0);
 }
 
-void DeleteVAO(VAO* vao_) {
-    glDeleteVertexArrays(1, &vao_->ID);
+void DeleteVAO(VAO* vao) {
+    glDeleteVertexArrays(1, &vao->ID);
 }
