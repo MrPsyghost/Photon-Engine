@@ -24,9 +24,10 @@ Texture* createTexture(const char* image, const char* texType, GLuint slot, GLen
 
     if (!bytes) {
         printf("Failed to load texture: %s\n", image);
-    } else {
-        printf("Loaded %s (%dx%d, channels=%d)\n", image, widthImg, heightImg, numColh);
     }
+    // else {
+    //     printf("Loaded %s (%dx%d, channels=%d)\n", image, widthImg, heightImg, numColh);
+    // }
 
     glGenTextures(1, &tex->ID);
     glActiveTexture(GL_TEXTURE0 + slot);

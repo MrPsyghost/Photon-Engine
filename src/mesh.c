@@ -9,7 +9,7 @@ Mesh* createMesh(Vertex* vertices, size_t vertexCount, GLuint* indices, size_t i
     mesh->indexCount = indexCount;
     mesh->textures = textures;
     mesh->textureCount = textureCount;
-
+    
     BindVAO(mesh->vao);
     VBO* vbo = createVBO(vertices, vertexCount * sizeof(Vertex));
     EBO* ebo = createEBO(indices, indexCount * sizeof(GLuint));
